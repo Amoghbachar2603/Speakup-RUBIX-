@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whistleblower Incident Report - Voice Agent</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Whistleblower Incident Report - Voice Agent</h1>
+        <p>Speak to the AI voice agent to report an incident. The agent will ask you a few questions, and your answers will be automatically transcribed and processed.</p>
+        
+        <div id="conversation">
+            <h2 id="question">Press "Start Voice Agent" to begin.</h2>
+            <button id="startButton">Start Voice Agent</button>
+            <p id="status">Status: Waiting to start...</p>
+            <p id="transcription"></p>
+        </div>
+        
+        <div id="results" style="display: none;">
+            <h2>Extracted Details</h2>
+            <p><strong>Please save the following Reference ID and Password to track your report later:</strong></p>
+            <div class="result-grid">
+                <div>
+                    <strong>Reference ID:</strong> <span id="reference_id">Not available</span>
+                </div>
+                <div>
+                    <strong>Password:</strong> <span id="password">Not available</span>
+                </div>
+                <div>
+                    <strong>Category:</strong> <span id="category">Not mentioned</span>
+                </div>
+                <div>
+                    <strong>Date:</strong> <span id="date">Not mentioned</span>
+                </div>
+                <div>
+                    <strong>Time:</strong> <span id="time">Not mentioned</span>
+                </div>
+                <div>
+                    <strong>Accused:</strong> <span id="accused">Not mentioned</span>
+                </div>
+                <div>
+                    <strong>Location:</strong> <span id="location">Not mentioned</span>
+                </div>
+                <div>
+                    <strong>Summary:</strong> <span id="summary">Not mentioned</span>
+                </div>
+            </div>
+            <button id="restartButton">Start Over</button>
+            <a href="/"><button>Return to Home</button></a>
+        </div>
+        
+        <div class="text-input">
+            <h2>Prefer to type?</h2>
+            <form id="textForm">
+                <textarea id="incidentText" name="incident_text" placeholder="e.g., Yesterday around 3 PM in the marketing department, my supervisor made inappropriate comments..." rows="5" cols="50"></textarea>
+                <br>
+                <button type="submit">Submit Text</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>

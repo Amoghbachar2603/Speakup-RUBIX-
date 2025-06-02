@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report View</title>
+    <style>
+        body {
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            background: #eef2f5;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        strong {
+            color: #007bff;
+        }
+        h4 {
+            margin-top: 20px;
+            color: #555;
+        }
+        .status-update {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .no-updates {
+            color: #888;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h3>Report Details</h3>
+    <p><strong>Reference ID:</strong> {{ report.reference_id }}</p>
+    <p><strong>Description:</strong> {{ report.description }}</p>
+    <p><strong>Location:</strong> {{ report.location }}</p>
+    <p><strong>Time:</strong> {{ report.time }}</p>
+    <p><strong>Category:</strong> {{ report.category }}</p>
+    <p><strong>Accused:</strong> {{ report.accused }}</p>
+
+    <h4>Status Updates</h4>
+    {% if trackings %}
+        <div class="status-update">
+            {% for t in trackings %}
+                <p>- {{ t.timestamp.strftime('%Y-%m-%d %H:%M') }}: {{ t.message }}</p>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="no-updates">No updates yet.</p>
+    {% endif %}
+</div>
+</body>
+</html>

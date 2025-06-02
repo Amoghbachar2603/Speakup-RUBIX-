@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reporter Login</title>
+    <style>
+        body {
+            background-color: #1c1c1c;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background: #2c2c2c;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #000;
+        }
+        input {
+            align-items: center;
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            
+        }
+        button:hover {
+            background-color: #1e8449;
+        }
+        h2 {
+            text-align: center;
+            color: #f39c12;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        <h2>Reporter Login</h2>
+        <input name="reference_id" placeholder="Reference ID" required>
+        <input name="password" type="password" placeholder="Password" required>
+        <button type="submit">View Report</button>
+    </form>
+</body>
+</html>
